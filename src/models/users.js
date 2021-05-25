@@ -6,8 +6,8 @@ const usersSchema = new mongoose.Schema({
     type: String,
     required:true,
     minLength: 3,
-    maxLength: 16,
-    match: /^[a-z0-9_-]{3,15}$ ['Must have between 3 to 16 characters, could have - or _']/
+    maxLength: 16
+ // match: /^[a-z0-9_-]{3,15}$ ['Must have between 3 to 16 characters, could have - or _']/
   },
   fullName: {
     type: String,
@@ -36,8 +36,8 @@ const usersSchema = new mongoose.Schema({
     maxLength: 1000
   },
   joined: {
-    type: Date, 
-    default: Date.now 
+    type: Date,
+    default: Date.now
   },
   password: {
     type: String,
