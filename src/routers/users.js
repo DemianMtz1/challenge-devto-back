@@ -47,13 +47,21 @@ router.post('/', async (request, response) => {
 router.delete('/:id', async (request,response) => {
   try{
     const { id } = request.params
-    const userDeleted = await users.deleteById(id)
-    response.json({
-      success:true,
-      message: 'User has been deleted succesfyly',
-      data: {
-        user: userDeleted
-      }
+    if(!id){
+        response.status(400).
+        response.json({
+            success: false,
+            message: 'Id does not exist',
+        })
+        return;
+    }
+    const userDeleted = await users.deleteById(id);
+    response.status(200).json({
+        success: true,
+        message: 'User deleted successfuly',
+        data: {
+            reply: userDeleted
+        }
     })
   }catch(error){
     response.status(400)
@@ -62,7 +70,35 @@ router.delete('/:id', async (request,response) => {
       message: 'Could not delete user',
       error: error.message
     })
-    console.log(error)
+  }
+})
+
+router.patch('/:id', async (request,response) => {
+  try{
+    const { id } = request.params
+    if(!id){
+      response.status(400)
+      response.json({
+          success: false,
+          message: 'Id does not exist',
+      })
+      return
+    }
+    const userUpdated = await users.updateById(id, request.body)
+    response.json({
+      success: true,
+      message: 'User updated',
+      data: {
+        users: userUpdated
+      }
+    })
+  }catch(error){
+    response.status(400)
+    response.json({
+      success: false,
+      message: 'Could not update user',
+      error: error.message
+    })
   }
 })
 

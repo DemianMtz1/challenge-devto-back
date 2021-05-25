@@ -4,6 +4,7 @@ const app = express();
 const postsRouter = require ('./routers/posts'); //Se agrega el router de post
 const repliesRouter = require('./routers/replies');
 const reactionsRouter = require('./routers/reactions');
+const usersRouter = require('./routers/users');
 
 const cors = require('cors')
 require('dotenv').config({ path: 'src/.env' })

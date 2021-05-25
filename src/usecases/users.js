@@ -28,8 +28,18 @@ async function signUp ({ nickname, fullName, avatarUrl, description, work, locat
 })
 }
 
+function deleteById(id) {
+  return Users.findByIdAndDelete(id)
+}
+
+function updateById(id, dataToUpdate){
+  return Users.findByIdAndUpdate(id, dataToUpdate)
+}
+
 module.exports = {
   getAll,
-  signUp
+  signUp,
+  deleteById,
+  updateById
 }
 
