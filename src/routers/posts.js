@@ -31,7 +31,7 @@ router.post ('/', async (request, response) => {
             success: true,
             message: 'Post created successfuly',
             data: {
-                koders: postCreated
+                post: postCreated
             }
         })
     } catch (error) {
@@ -54,7 +54,7 @@ router.delete ('/:id', async  (request, response) => {
             success: true,
             message: 'Post deleted successfuly',
             data: {
-                koders: postDeleted
+                post: postDeleted
             }
         })
 
