@@ -1,11 +1,13 @@
 const app = require('./src/server');
 const connect = require('./src/lib/db')
 
+const PORT = process.env.PORT || 8080;
+
 connect()
     .then(() => {
-        app.listen(8080, () => {
+        app.listen(PORT, () => {
             console.log('DB connected')
-            console.log(`Server listening on port ${8080}`)
+            console.log(`Server listening on port ${PORT}`);
         })
     })
     .catch(err => {
