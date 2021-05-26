@@ -10,7 +10,7 @@ router.get ('/', async (request, response)=> {
             success: true,
             message: 'All posts',
             data: {
-                koders: allPosts
+                posts: allPosts
             }
         })
     } catch (error) {
