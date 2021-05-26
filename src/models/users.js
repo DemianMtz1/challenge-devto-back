@@ -36,14 +36,10 @@ const usersSchema = new mongoose.Schema({
     maxLength: 1000
   },
   joined: {
-    type: Date,
-    default: Date.now
-  },
-  password: {
     type: String,
-    required: true,
-    minLength: 1,
+    minLength:2,
   }
+
 })
 
 const model = mongoose.model('users', usersSchema)

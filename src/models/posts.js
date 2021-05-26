@@ -1,12 +1,14 @@
 const mongoose = require ('mongoose')
 
 const postsSchema = new mongoose.Schema ({
+    idUser: {
+        type: String,
+        required: true
+    },
     postTitle: {
         type: String,
         require: true,
         minLength: 1,
-        maxLength: 150,
-
     },
     tags: {
         type: [String],
