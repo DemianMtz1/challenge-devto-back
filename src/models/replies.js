@@ -22,7 +22,7 @@ const replySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    nicknameUser: {
+    nickname: {
         type: String,
         required: true,
         minLength: 2

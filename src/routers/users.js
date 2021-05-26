@@ -26,6 +26,7 @@ router.get('/', async (request,response) => {
 
 router.post('/', async (request, response) => {
   try{
+    console.log(request.body)
     const newUser = await users.signUp(request.body)
     response.json({
       success:true,

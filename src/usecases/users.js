@@ -6,7 +6,7 @@ function getAll () {
   return Users.find()
 }
 
-async function signUp ({ nickname, fullName, avatarUrl, description, work, location, joined, password }){
+async function signUp ({ nickname, fullName, avatarUrl, description, work, location, joined}){
 
   const userFound = await Users.findOne({ nickname })
 
@@ -14,7 +14,7 @@ async function signUp ({ nickname, fullName, avatarUrl, description, work, locat
     throw new Error('User already exist')
   }
 
-  const encriptedPassword = await bcrypt.hash(password)
+  //const encriptedPassword = await bcrypt.hash(password)
 
   return Users.create({
   nickname, 
@@ -23,8 +23,7 @@ async function signUp ({ nickname, fullName, avatarUrl, description, work, locat
   description,
   work,
   location,
-  joined, 
-  password: encriptedPassword
+  joined
 })
 }
 

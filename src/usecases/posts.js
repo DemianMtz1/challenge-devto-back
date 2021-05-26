@@ -8,12 +8,12 @@ function getById(id){
     return Posts.findById(id);
 }
 
-function publishPosts ({postTitle, tags, imgPost, contenrPost, createdDate, createdTime}) {
-    return Post.create ({postTitle, tags, imgPost, contenrPost, createdDate, createdTime})
+function publishPosts ({idUser, postTitle, tags, imgPost, contentPost, createdDate, createdTime}) {
+    return Posts.create ({idUser, postTitle, tags, imgPost, contentPost, createdDate, createdTime})
 }
 
 function deleteById (id) {
-    return Post.findByIdAndDelete (id)
+    return Posts.findByIdAndDelete (id)
 }
 
 // function postUpdate (id, infoToUpdate) {

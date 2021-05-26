@@ -9,14 +9,14 @@ function create({
     createdDate,
     createdTime,
     idUser,
-    nicknameUser,
+    nickname,
     idPost}) {
     return Reply.create({
         contentReply,
         createdDate,
         createdTime,
         idUser,
-        nicknameUser,
+        nickname,
         idPost,
     })
 }
