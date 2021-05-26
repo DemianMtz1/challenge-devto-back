@@ -24,7 +24,7 @@ const postsSchema = new mongoose.Schema ({
         minLength: 1
     },
     createdDate: { // ¿Ok el formato para fecha?
-        type: Date,
+        type: String,
         required: true,
     },
     createdTime: { //¿Cómo es el formato para la hora?

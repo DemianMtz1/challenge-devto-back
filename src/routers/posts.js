@@ -68,4 +68,27 @@ router.delete ('/:id', async  (request, response) => {
     }
 })
 
+router.get('/:id', async  (request, response) => {
+    try {
+        const { id } = request.params
+        const postFound = await posts.getById(id)
+
+        response.json ({
+            success: true,
+            message: 'Post Found',
+            data: {
+                post: postFound
+            }
+        })
+
+    } catch (error) {
+        response.status (400)
+        response.json ({
+            success: false,
+            message: 'Error, could not get the element',
+            error: error.message
+        })
+    }
+})
+
 module.exports = router 

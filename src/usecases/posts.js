@@ -4,6 +4,10 @@ function getAll () {
     return Posts.find ({})
 }
 
+function getById(id){
+    return Posts.findById(id);
+}
+
 function publishPosts ({postTitle, tags, imgPost, contenrPost, createdDate, createdTime}) {
     return Post.create ({postTitle, tags, imgPost, contenrPost, createdDate, createdTime})
 }
@@ -19,6 +23,7 @@ function deleteById (id) {
 
 module.exports = {
     getAll,
+    getById,
     publishPosts,
     deleteById
 }
